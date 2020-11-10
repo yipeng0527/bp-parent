@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: bp-business
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.75:8848
