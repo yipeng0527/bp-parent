@@ -3,8 +3,9 @@ package com.bp.mall.service.impl;
 import com.bp.mall.sao.BusinessSAO;
 import com.bp.mall.service.MallService;
 import com.bp.mall.util.BusinessResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,6 +20,8 @@ import java.util.List;
  */
 @Service
 public class MallServiceImpl implements MallService {
+
+    private Logger logger = LoggerFactory.getLogger(MallServiceImpl.class);
 
     @Autowired
     private DiscoveryClient discoveryClient;
