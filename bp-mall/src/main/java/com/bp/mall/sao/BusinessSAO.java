@@ -1,5 +1,7 @@
 package com.bp.mall.sao;
 
+import com.bp.mall.sao.impl.BusinessFallback;
+import com.bp.mall.sao.impl.BusinessFallbackFactory;
 import com.bp.mall.util.BusinessResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version 1.0
  * @Desc
  */
-@FeignClient(name = "bp-business")
+@FeignClient(name = "bp-business",fallback = BusinessFallback.class)
 public interface BusinessSAO {
 
     @RequestMapping("/bp-business/merchant/list")

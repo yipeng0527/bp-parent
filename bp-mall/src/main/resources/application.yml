@@ -10,3 +10,14 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.3.75:8848
+    sentinel:
+      transport:
+        # sentinel控制台的地址
+        dashboard: 192.168.3.75:8080
+      # 立即加载
+      eager: true
+
+feign:
+  sentinel:
+    # 默认是没有提示的
+    enabled: true
