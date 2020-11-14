@@ -2,13 +2,17 @@ package com.bp.business.po;
 
 import com.bp.business.util.GsonUtil;
 
+import java.io.Serializable;
+
 /**
  * @Author yipeng
  * @Date 2020/11/10 15:08
  * @Version 1.0
  * @Desc
  */
-public class MerchantPO {
+public class MerchantPO implements Serializable {
+
+    private String id;
 
     private String name;
 
@@ -20,6 +24,14 @@ public class MerchantPO {
     public MerchantPO(String name, String address) {
         this.name = name;
         this.address = address;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

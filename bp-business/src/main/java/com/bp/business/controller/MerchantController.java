@@ -2,13 +2,12 @@ package com.bp.business.controller;
 
 import com.bp.business.service.MerchantService;
 import com.bp.business.util.BusinessResponse;
+import com.bp.business.vo.request.MerchantRequest;
 import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,6 +31,15 @@ public class MerchantController {
         Stopwatch stopwatch = Stopwatch.createStarted();
         BusinessResponse response = this.merchantService.getMerchantList();
         logger.info("getMerchantList result:{} cost:{} ms", response, stopwatch.elapsed(TimeUnit.MILLISECONDS));
+        return response;
+    }
+
+    @PostMapping("/add")
+    public BusinessResponse addMerchant(@RequestBody MerchantRequest request) {
+        logger.info("addMerchant param:{}", request);
+        Stopwatch stopwatch = Stopwatch.createStarted();
+        BusinessResponse response = this.merchantService.addMerchant(request);
+        logger.info("addMerchant result:{} cost:{} ms", response, stopwatch.elapsed(TimeUnit.MILLISECONDS));
         return response;
     }
 }

@@ -4,6 +4,8 @@ server:
     context-path: /bp-business
 
 spring:
+  profiles:
+    active: dev
   application:
     name: bp-business
   cloud:
@@ -16,3 +18,25 @@ spring:
         dashboard: 120.78.137.159:8080
       # 立即加载
       eager: true
+  datasource:
+    url: jdbc:postgresql://120.78.137.159:5432/nacos?binaryTransfer=false
+    username: nacos
+    password: nacos
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 32
+      min-idle: 32
+      max-active: 32
+      max-wait: 128
+      pool-prepared-statements: false
+      validation-query: SELECT 1
+      validation-query-timeout: 1800
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml

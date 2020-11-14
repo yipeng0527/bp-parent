@@ -27,6 +27,9 @@
         <slf4j.version>1.7.30</slf4j.version>
         <spring.cloud.version>Greenwich.SR2</spring.cloud.version>
         <spring.cloud.alibaba.version>0.9.0.RELEASE</spring.cloud.alibaba.version>
+        <mybatis.spring.boot.starter.version>1.1.1</mybatis.spring.boot.starter.version>
+        <postgresql.version>9.4.1209</postgresql.version>
+        <druid.spring.boot.starter.version>1.1.21</druid.spring.boot.starter.version>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +48,21 @@
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.spring.boot.starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

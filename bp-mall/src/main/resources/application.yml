@@ -4,6 +4,8 @@ server:
     context-path: /bp-mall
 
 spring:
+  profiles:
+    active: dev
   application:
     name: bp-mall
   cloud:

@@ -1,6 +1,7 @@
 package com.bp.business.service;
 
 import com.bp.business.util.BusinessResponse;
+import com.bp.business.vo.request.MerchantRequest;
 
 /**
  * @Author yipeng
@@ -15,4 +16,10 @@ public interface MerchantService {
      */
     BusinessResponse getMerchantList();
 
+    /**
+     * 新增商户信息
+     * @param request
+     * @return
+     */
+    BusinessResponse addMerchant(MerchantRequest request);
 }
