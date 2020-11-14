@@ -9,10 +9,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.3.75:8848
+        server-addr: 120.78.137.159:8848
     sentinel:
       transport:
         # sentinel控制台的地址
-        dashboard: 192.168.3.75:8080
+        dashboard: 120.78.137.159:8080
       # 立即加载
       eager: true
