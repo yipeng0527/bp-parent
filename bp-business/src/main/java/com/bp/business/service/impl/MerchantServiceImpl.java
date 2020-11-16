@@ -36,7 +36,6 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
     public BusinessResponse addMerchant(MerchantRequest request) {
         MerchantPO merchatPO = MerchantConver.getMerchantPO(request);
         int result = this.merchantDAO.insert(merchatPO);

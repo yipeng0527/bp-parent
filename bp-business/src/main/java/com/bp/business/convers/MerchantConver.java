@@ -14,7 +14,6 @@ import java.util.UUID;
 public class MerchantConver {
     public static MerchantPO getMerchantPO(MerchantRequest request) {
         MerchantPO merchantPO = new MerchantPO();
-        merchantPO.setId(UUID.randomUUID().toString().replace("-", ""));
         merchantPO.setName(request.getName());
         merchantPO.setAddress(request.getAddress());
         return merchantPO;

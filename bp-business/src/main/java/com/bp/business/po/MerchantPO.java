@@ -12,8 +12,6 @@ import java.io.Serializable;
  */
 public class MerchantPO implements Serializable {
 
-    private String id;
-
     private String name;
 
     private String address;
@@ -24,14 +22,6 @@ public class MerchantPO implements Serializable {
     public MerchantPO(String name, String address) {
         this.name = name;
         this.address = address;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
